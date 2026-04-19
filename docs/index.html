@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebVoice - Webページを聴く、カセットテープ風読上げアプリ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1565C0;
+            --primary-light: #42A5F5;
+            --bg: #f8faff;
+            --text: #334155;
+            --text-light: #64748b;
+            --white: #ffffff;
+            --premium: #f59e0b;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: var(--text);
+            background-color: var(--bg);
+        }
+
+        header {
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            left: -10%;
+            width: 120%;
+            height: 100px;
+            background: var(--bg);
+            transform: rotate(-2deg);
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 3em;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .subtitle {
+            font-size: 1.25em;
+            margin-top: 15px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 400;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px 100px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 20px;
+        }
+
+        .link-card {
+            background: var(--white);
+            padding: 32px;
+            border-radius: 20px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+
+        .link-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            border-color: var(--primary-light);
+        }
+
+        .link-icon {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .link-title {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 12px;
+        }
+
+        .link-description {
+            color: var(--text-light);
+            font-size: 1em;
+            flex-grow: 1;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #e2e8f0;
+            padding: 4px 12px;
+            border-radius: 9999px;
+            font-size: 0.75em;
+            font-weight: 600;
+            margin-top: 16px;
+            color: var(--text-light);
+            align-self: flex-start;
+        }
+
+        footer {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--text-light);
+            font-size: 0.9em;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .premium-tag {
+            color: var(--premium);
+            font-weight: bold;
+        }
+
+        @media (max-width: 640px) {
+            h1 { font-size: 2.2em; }
+            .subtitle { font-size: 1.1em; }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>WebVoice</h1>
+        <div class="subtitle">Webサイトやニュースを英語教材にする。<br>webの音声読上げアプリ。</div>
+    </header>
+
+    <div class="container">
+        <div class="links">
+            <a href="user-guide.html" class="link-card">
+                <div class="link-icon">📖</div>
+                <div class="link-title">使い方ガイド</div>
+                <div class="link-description">
+                    ニュースソースの追加方法や、効率的な読上げ設定、ブラウザからの共有方法について解説します。
+                </div>
+                <div class="badge">基本操作</div>
+            </a>
+
+            <a href="deepl-guide.html" class="link-card">
+                <div class="link-icon">👑</div>
+                <div class="link-title">DeepL設定ガイド</div>
+                <div class="link-description">
+                    プレミアム機能である「高精度翻訳エンジン(DeepL)」を利用するためのAPIキー取得手順を詳しく説明します。
+                </div>
+                <div class="badge premium-tag">プレミアム特典</div>
+            </a>
+
+            <a href="support.html" class="link-card">
+                <div class="link-icon">❓</div>
+                <div class="link-title">サポート / FAQ</div>
+                <div class="link-description">
+                    音声が流れない、特定のページが読み込めないなどのトラブルシューティングと、よくある質問を掲載。
+                </div>
+                <div class="badge">お困りの時</div>
+            </a>
+
+            <a href="privacy-policy.html" class="link-card">
+                <div class="link-icon">🔒</div>
+                <div class="link-title">プライバシーポリシー</div>
+                <div class="link-description">
+                    利用者情報の保護方針、データの取り扱い、利用している第三者サービスについて明記しています。
+                </div>
+                <div class="badge">規約類</div>
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 itoshin-tech. All rights reserved.</p>
+        <p style="font-size: 0.8em; opacity: 0.6;">Last Updated: 2026-04-14</p>
+    </footer>
+</body>
+
+</html>

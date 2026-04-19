@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>使い方ガイド - WebVoice</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1565C0;
+            --primary-light: #42A5F5;
+            --bg: #f8faff;
+            --text: #334155;
+            --text-light: #64748b;
+            --white: #ffffff;
+            --premium: #f59e0b;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+            color: var(--text);
+            background-color: var(--bg);
+        }
+
+        .navbar {
+            background: var(--white);
+            padding: 16px 20px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        h1 {
+            font-size: 2.2em;
+            color: #0f172a;
+            margin-bottom: 32px;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            color: #1e293b;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 32px;
+            border-radius: 24px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            margin-bottom: 24px;
+        }
+
+        .step-list {
+            padding: 0;
+            list-style: none;
+        }
+
+        .step-item {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .step-num {
+            background: #f1f5f9;
+            color: var(--primary);
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+            font-size: 0.9em;
+        }
+
+        .important {
+            background: #fff7ed;
+            border-left: 4px solid #f97316;
+            padding: 20px;
+            border-radius: 0 12px 12px 0;
+            margin: 20px 0;
+        }
+
+        .tip {
+            background: #f0f9ff;
+            border-left: 4px solid #0ea5e9;
+            padding: 20px;
+            border-radius: 0 12px 12px 0;
+            margin: 20px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 60px;
+            color: var(--text-light);
+            font-size: 0.9em;
+        }
+
+        code {
+            background: #f1f5f9;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+            color: var(--primary);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="container" style="margin:0 auto; padding:0 20px;">
+            <a href="index.html">← ホームへ戻る</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>使い方ガイド</h1>
+
+        <div class="card">
+            <h2>📰 ニュースソースを追加する</h2>
+            <p>お気に入りのニュースサイトやブログを登録して、最新記事を自動的に取得できます。</p>
+            <div class="step-list">
+                <div class="step-item">
+                    <div class="step-num">1</div>
+                    <div>ホーム画面の「追加」ボタン、または管理画面へ移動します。</div>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">2</div>
+                    <div>サイトの案内から選ぶか、URLを直接入力して「追加」をタップします。</div>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">3</div>
+                    <div>登録されたサイトのタイトルが表示されれば完了です。</div>
+                </div>
+            </div>
+            <div class="tip">
+                <strong>ヒント:</strong> RSSフィードを公開しているサイトであれば、ほとんどのニュースを購読可能です。
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>🔗 ブラウザからURLを共有する</h2>
+            <p>ブラウザで記事を読んでいる途中で「後で聴きたい」と思ったら、共有機能が便利です。</p>
+            <div class="step-list">
+                <div class="step-item">
+                    <div class="step-num">1</div>
+                    <div>Chromeなどのブラウザで、読みたいページを開きます。</div>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">2</div>
+                    <div>ブラウザのメニューから<b>「共有」</b>を選択します。</div>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">3</div>
+                    <div>アプリ一覧から<b>「WebVoice」</b>を選択すると、アプリが起動して読上げを開始します。</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>🎙 読上げと翻訳のカスタマイズ</h2>
+            <p>設定画面から、自分好みの聴取環境を整えることができます。</p>
+            <ul>
+                <li><b>再生モード:</b> 「英語のみ」「日本語のみ」「英語の後に日本語（翻訳）」など、スロットごとに自由に設定できます。</li>
+                <li><b>読上げ速度:</b> 0.5倍から2.0倍まで調整可能です。</li>
+                <li><b>高精度翻訳:</b> <a href="deepl-guide.html">DeepL設定ガイド</a> を参照してAPIキーを設定すると、より自然な翻訳で楽しめます。</li>
+            </ul>
+        </div>
+
+        <div class="important">
+            <strong>注意点:</strong> Webサイトの構造によっては、正しく本文を抽出できない場合があります。その際は「元HP」タブに切り替えて、通常のブラウザとして閲覧してください。
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 itoshin-tech</p>
+    </footer>
+</body>
+
+</html>

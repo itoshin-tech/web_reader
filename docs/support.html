@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>サポート - WebVoice</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1565C0;
+            --primary-light: #42A5F5;
+            --bg: #f8faff;
+            --text: #334155;
+            --text-light: #64748b;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+            color: var(--text);
+            background-color: var(--bg);
+        }
+
+        .navbar {
+            background: var(--white);
+            padding: 16px 20px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        h1 {
+            font-size: 2.2em;
+            color: #0f172a;
+            margin-bottom: 32px;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 24px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            margin-bottom: 24px;
+        }
+
+        h2 {
+            font-size: 1.4em;
+            color: #1e293b;
+            margin-top: 30px;
+            margin-bottom: 16px;
+        }
+
+        .qa {
+            border-bottom: 1px solid #f1f5f9;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+
+        .qa:last-child {
+            border-bottom: none;
+        }
+
+        .question {
+            font-weight: bold;
+            color: var(--primary);
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 60px;
+            color: var(--text-light);
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="container" style="margin:0 auto; padding:0 20px;">
+            <a href="index.html">← ホームへ戻る</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>サポート・お問い合わせ</h1>
+
+        <div class="card">
+            <p>「WebVoice」をご利用いただきありがとうございます。ご不明な点や不具合の報告は、以下の方法で受け付けております。</p>
+
+            <h2>よくある質問 (FAQ)</h2>
+            <div class="qa">
+                <span class="question">Q. 音声が再生されません。</span>
+                <div>A. 端末の音量がミュートになっていないか、またはマナーモードが解除されているかご確認ください。また、OS標準のTTS（音声合成エンジン）がインストールされている必要があります。</div>
+            </div>
+
+            <div class="qa">
+                <span class="question">Q. 記事の内容が正しく抽出されません。</span>
+                <div>A. Webサイトの構造によっては、解析が困難な場合があります。特に動的にコンテンツを読み込むサイトや、会員限定記事などは対応していない場合があります。その際は「元HP」タブでの閲覧をお試しください。</div>
+            </div>
+
+            <div class="qa">
+                <span class="question">Q. ニュースソースが更新されません。</span>
+                <div>A. サイト側がRSSフィードの配信を停止しているか、一時的にサーバーがダウンしている可能性があります。時間を置いて再度お試しください。</div>
+            </div>
+
+            <h2>お問い合わせ</h2>
+            <p>不具合の報告や機能のリクエストは、下記のGitHubリポジトリのIssuesまでお寄せください。</p>
+            <p><a href="https://github.com/itoshin-tech/web_voice/issues"
+                    target="_blank">https://github.com/itoshin-tech/web_voice/issues</a></p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 itoshin-tech</p>
+    </footer>
+</body>
+
+</html>
