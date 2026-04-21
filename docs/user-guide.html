@@ -45,7 +45,7 @@
         }
 
         .container {
-            max-width: 800px;
+            max-width: 820px;
             margin: 40px auto;
             padding: 0 20px;
         }
@@ -53,17 +53,29 @@
         h1 {
             font-size: 2.2em;
             color: #0f172a;
-            margin-bottom: 32px;
+            margin-bottom: 8px;
+        }
+
+        h1 + p {
+            color: var(--text-light);
+            margin-top: 0;
+            margin-bottom: 40px;
         }
 
         h2 {
-            font-size: 1.5em;
+            font-size: 1.4em;
             color: #1e293b;
-            margin-top: 40px;
-            margin-bottom: 20px;
+            margin-top: 0;
+            margin-bottom: 16px;
             display: flex;
             align-items: center;
             gap: 10px;
+        }
+
+        h3 {
+            font-size: 1.05em;
+            color: #1e293b;
+            margin-bottom: 8px;
         }
 
         .card {
@@ -71,38 +83,73 @@
             padding: 32px;
             border-radius: 24px;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-            margin-bottom: 24px;
+            margin-bottom: 28px;
         }
 
+        /* TOC */
+        .toc {
+            background: #f1f5f9;
+            border-radius: 16px;
+            padding: 24px 32px;
+            margin-bottom: 32px;
+        }
+
+        .toc h3 {
+            margin-top: 0;
+            color: var(--primary);
+        }
+
+        .toc ol {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        .toc li {
+            margin-bottom: 6px;
+        }
+
+        .toc a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .toc a:hover {
+            text-decoration: underline;
+        }
+
+        /* Steps */
         .step-list {
             padding: 0;
             list-style: none;
+            margin: 0;
         }
 
         .step-item {
             display: flex;
             gap: 16px;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
         }
 
         .step-num {
-            background: #f1f5f9;
-            color: var(--primary);
-            width: 28px;
-            height: 28px;
+            background: var(--primary);
+            color: #fff;
+            width: 26px;
+            height: 26px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: bold;
             flex-shrink: 0;
-            font-size: 0.9em;
+            font-size: 0.85em;
+            margin-top: 2px;
         }
 
+        /* Callouts */
         .important {
             background: #fff7ed;
             border-left: 4px solid #f97316;
-            padding: 20px;
+            padding: 16px 20px;
             border-radius: 0 12px 12px 0;
             margin: 20px 0;
         }
@@ -110,9 +157,95 @@
         .tip {
             background: #f0f9ff;
             border-left: 4px solid #0ea5e9;
-            padding: 20px;
+            padding: 16px 20px;
             border-radius: 0 12px 12px 0;
             margin: 20px 0;
+        }
+
+        /* Screenshots */
+        .screenshot-row {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 24px 0;
+        }
+
+        .screenshot-wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .screenshot-wrap figcaption {
+            font-size: 0.82em;
+            color: var(--text-light);
+            text-align: center;
+        }
+
+        .screenshot {
+            width: 180px;
+            border-radius: 16px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+            display: block;
+        }
+
+        .screenshot-lg {
+            width: 220px;
+        }
+
+        /* Tab overview */
+        .tab-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 14px;
+            margin: 20px 0;
+        }
+
+        .tab-item {
+            background: #f8faff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 14px;
+            text-align: center;
+        }
+
+        .tab-item .tab-icon {
+            font-size: 1.6em;
+            margin-bottom: 6px;
+        }
+
+        .tab-item .tab-name {
+            font-weight: 600;
+            font-size: 0.9em;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+
+        .tab-item .tab-desc {
+            font-size: 0.78em;
+            color: var(--text-light);
+        }
+
+        /* Slot table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9em;
+            margin: 16px 0;
+        }
+
+        th {
+            background: #f1f5f9;
+            padding: 10px 14px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 10px 14px;
+            border-bottom: 1px solid #f1f5f9;
         }
 
         footer {
@@ -129,6 +262,12 @@
             font-family: monospace;
             color: var(--primary);
         }
+
+        @media (max-width: 600px) {
+            .screenshot { width: 140px; }
+            .screenshot-lg { width: 160px; }
+            .card { padding: 20px; }
+        }
     </style>
 </head>
 
@@ -141,60 +280,254 @@
 
     <div class="container">
         <h1>使い方ガイド</h1>
+        <p>WebVoice の基本操作から詳細設定まで、画面ごとに解説します。</p>
 
-        <div class="card">
-            <h2>📰 ニュースソースを追加する</h2>
-            <p>お気に入りのニュースサイトやブログを登録して、最新記事を自動的に取得できます。</p>
+        <!-- TOC -->
+        <div class="toc">
+            <h3>目次</h3>
+            <ol>
+                <li><a href="#overview">画面構成の概要</a></li>
+                <li><a href="#home">ホーム画面 — ニュースソースの管理</a></li>
+                <li><a href="#articles">記事一覧</a></li>
+                <li><a href="#reader">読み上げ画面</a></li>
+                <li><a href="#hp">HP（元のウェブページ）</a></li>
+                <li><a href="#share">ブラウザから URL を共有する</a></li>
+                <li><a href="#settings">設定画面</a></li>
+            </ol>
+        </div>
+
+        <!-- 1. Overview -->
+        <div class="card" id="overview">
+            <h2>🗂 画面構成の概要</h2>
+            <p>アプリは下部のタブバーで 5 つの画面を切り替えます。</p>
+            <div class="tab-grid">
+                <div class="tab-item">
+                    <div class="tab-icon">🏠</div>
+                    <div class="tab-name">ホーム</div>
+                    <div class="tab-desc">ニュースソース（RSSフィード）の管理</div>
+                </div>
+                <div class="tab-item">
+                    <div class="tab-icon">📋</div>
+                    <div class="tab-name">記事一覧</div>
+                    <div class="tab-desc">登録ソースの最新記事リスト</div>
+                </div>
+                <div class="tab-item">
+                    <div class="tab-icon">📖</div>
+                    <div class="tab-name">読み上げ</div>
+                    <div class="tab-desc">英日対訳テキストと再生コントロール</div>
+                </div>
+                <div class="tab-item">
+                    <div class="tab-icon">🌐</div>
+                    <div class="tab-name">HP</div>
+                    <div class="tab-desc">記事の元ウェブページを表示</div>
+                </div>
+                <div class="tab-item">
+                    <div class="tab-icon">⚙️</div>
+                    <div class="tab-name">設定</div>
+                    <div class="tab-desc">再生・翻訳・音声の詳細設定</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. Home -->
+        <div class="card" id="home">
+            <h2>🏠 ホーム画面 — ニュースソースの管理</h2>
+            <div class="screenshot-row">
+                <figure class="screenshot-wrap">
+                    <img src="image/ホーム.png" alt="ホーム画面" class="screenshot">
+                    <figcaption>ホーム画面</figcaption>
+                </figure>
+            </div>
+            <p>登録済みのニュースソース（RSSフィード）が一覧表示されます。ソースをタップすると、そのサイトの記事一覧に移動します。</p>
+
+            <h3>ニュースソースを追加する</h3>
             <div class="step-list">
                 <div class="step-item">
                     <div class="step-num">1</div>
-                    <div>ホーム画面の「追加」ボタン、または管理画面へ移動します。</div>
+                    <div>右上の <b>「ニュースソースの追加と変更」</b> ボタンをタップします。</div>
                 </div>
                 <div class="step-item">
                     <div class="step-num">2</div>
-                    <div>サイトの案内から選ぶか、URLを直接入力して「追加」をタップします。</div>
+                    <div>案内リストから選ぶか、RSSフィードの URL を直接入力して「追加」をタップします。</div>
                 </div>
                 <div class="step-item">
                     <div class="step-num">3</div>
-                    <div>登録されたサイトのタイトルが表示されれば完了です。</div>
+                    <div>サイト名が一覧に表示されれば登録完了です。</div>
                 </div>
             </div>
             <div class="tip">
-                <strong>ヒント:</strong> RSSフィードを公開しているサイトであれば、ほとんどのニュースを購読可能です。
+                <strong>ヒント:</strong> RSSフィードを公開しているサイトであれば、ニュースサイト・ブログを問わず追加できます。
             </div>
         </div>
 
-        <div class="card">
-            <h2>🔗 ブラウザからURLを共有する</h2>
-            <p>ブラウザで記事を読んでいる途中で「後で聴きたい」と思ったら、共有機能が便利です。</p>
+        <!-- 3. Articles -->
+        <div class="card" id="articles">
+            <h2>📋 記事一覧</h2>
+            <div class="screenshot-row">
+                <figure class="screenshot-wrap">
+                    <img src="image/記事一覧.png" alt="記事一覧" class="screenshot">
+                    <figcaption>記事一覧</figcaption>
+                </figure>
+            </div>
+            <p>ホームで選択したソースの最新記事が一覧表示されます。</p>
+            <ul>
+                <li><b>記事をタップ</b> → 読み上げ画面へ移動して本文の取得・読み上げを開始します。</li>
+                <li>上部の <b>ソース名ボタン</b> をタップすると、別のソースに切り替えられます。</li>
+            </ul>
+            <div class="tip">
+                <strong>ヒント:</strong> 設定で「記事選択時に自動で再生」をONにしておくと、タップした瞬間に読み上げが始まります。
+            </div>
+        </div>
+
+        <!-- 4. Reader -->
+        <div class="card" id="reader">
+            <h2>📖 読み上げ画面</h2>
+            <div class="screenshot-row">
+                <figure class="screenshot-wrap">
+                    <img src="image/読み上げ.png" alt="読み上げ画面" class="screenshot screenshot-lg">
+                    <figcaption>読み上げ画面</figcaption>
+                </figure>
+                <figure class="screenshot-wrap">
+                    <img src="image/ミニプレーヤー.png" alt="スロット設定" class="screenshot screenshot-lg">
+                    <figcaption>読み上げスロット設定</figcaption>
+                </figure>
+            </div>
+
+            <h3>テキストカードの見方</h3>
+            <ul>
+                <li>各段落が <b>カード</b> として表示されます。</li>
+                <li><b>黄色くハイライトされたカード</b> が現在読み上げ中の段落です。</li>
+                <li>英語（上段）と日本語翻訳（下段）が並んで表示されます。翻訳中はグレーで表示され、完了すると青灰色に変わります。</li>
+            </ul>
+
+            <h3>カードの操作</h3>
+            <table>
+                <tr><th>操作</th><th>動作</th></tr>
+                <tr><td>ハイライト中のカードをタップ</td><td>再生 / 一時停止</td></tr>
+                <tr><td>別のカードをタップ</td><td>そのカードから読み上げ開始</td></tr>
+            </table>
+
+            <h3>再生コントロールバー</h3>
+            <p>画面下部の操作バーで再生をコントロールできます。</p>
+            <table>
+                <tr><th>ボタン</th><th>動作</th></tr>
+                <tr><td>現在位置</td><td>現在読み上げ中のカードまでスクロール</td></tr>
+                <tr><td>追従 ON/OFF</td><td>読み上げに合わせて画面を自動スクロール</td></tr>
+                <tr><td>一時停止 / 再生</td><td>読み上げの開始・停止</td></tr>
+                <tr><td>次の文</td><td>次の段落へスキップ</td></tr>
+                <tr><td>次記事</td><td>次の記事へ進む</td></tr>
+            </table>
+
+            <h3>読み上げスロット設定</h3>
+            <p>読み上げ画面を上にスワイプすると、スロット設定パネルが開きます。1つの段落を最大 3 回まで異なる設定で読み上げることができます。</p>
+            <table>
+                <tr><th>設定項目</th><th>説明</th></tr>
+                <tr><td>言語</td><td>英語 / 日本語（翻訳）を選択</td></tr>
+                <tr><td>音声</td><td>音声1 / 音声2（設定画面で変更可）</td></tr>
+                <tr><td>速度</td><td>スライダーで再生速度を調整</td></tr>
+                <tr><td>ON/OFF トグル</td><td>そのスロットをスキップ</td></tr>
+            </table>
+            <div class="tip">
+                <strong>活用例:</strong> スロット1 = 英語 0.8倍速、スロット2 = 日本語 1.2倍速 に設定すると、英語を聞いてすぐ日本語訳で意味確認、というリスニング練習ができます。
+            </div>
+            <div class="important">
+                <strong>注意:</strong> スロット 3 はプレミアム機能です。
+            </div>
+        </div>
+
+        <!-- 5. HP -->
+        <div class="card" id="hp">
+            <h2>🌐 HP（元のウェブページ）</h2>
+            <div class="screenshot-row">
+                <figure class="screenshot-wrap">
+                    <img src="image/HP.png" alt="HP画面" class="screenshot screenshot-lg">
+                    <figcaption>HP（元ページ）</figcaption>
+                </figure>
+            </div>
+            <p>記事の元ウェブページを内蔵ブラウザで表示します。読み上げ中の段落がページ上でハイライト（黄色）され、現在の読み上げ位置を視覚的に確認できます。</p>
+            <ul>
+                <li>記事が選択されていれば、HP タブをタップするだけで自動的に元ページを開きます。</li>
+                <li>読み上げも同時にバックグラウンドで進行します。</li>
+            </ul>
+            <div class="important">
+                <strong>注意:</strong> サイトの構造によっては本文の抽出やハイライトがうまく機能しない場合があります。その際は読み上げタブのテキストをご確認ください。
+            </div>
+        </div>
+
+        <!-- 6. Share -->
+        <div class="card" id="share">
+            <h2>🔗 ブラウザから URL を共有する</h2>
+            <p>Chrome などのブラウザで記事を見つけたら、WebVoice に共有して読み上げさせることができます。</p>
+            <div class="screenshot-row">
+                <figure class="screenshot-wrap">
+                    <img src="image/web共有1.png" alt="Chromeの共有メニュー" class="screenshot">
+                    <figcaption>① Chrome のメニューを開く</figcaption>
+                </figure>
+                <figure class="screenshot-wrap">
+                    <img src="image/web共有3.png" alt="WebVoice を選択" class="screenshot">
+                    <figcaption>② 共有先を選択</figcaption>
+                </figure>
+                <figure class="screenshot-wrap">
+                    <img src="image/web共有2.png" alt="読み上げ開始" class="screenshot">
+                    <figcaption>③ 自動で読み上げ開始</figcaption>
+                </figure>
+            </div>
             <div class="step-list">
                 <div class="step-item">
                     <div class="step-num">1</div>
-                    <div>Chromeなどのブラウザで、読みたいページを開きます。</div>
+                    <div>Chrome などのブラウザで読みたいページを開き、メニュー（⋮）から <b>「共有…」</b> をタップします。</div>
                 </div>
                 <div class="step-item">
                     <div class="step-num">2</div>
-                    <div>ブラウザのメニューから<b>「共有」</b>を選択します。</div>
+                    <div>共有先の一覧から <b>「WebVoice」</b> を選択します。</div>
                 </div>
                 <div class="step-item">
                     <div class="step-num">3</div>
-                    <div>アプリ一覧から<b>「WebVoice」</b>を選択すると、アプリが起動して読上げを開始します。</div>
+                    <div>アプリが起動し、本文を自動取得して読み上げを開始します。</div>
                 </div>
+            </div>
+            <div class="tip">
+                <strong>ヒント:</strong> 設定の「記事選択時に自動で再生」がONの場合、アプリが開いた瞬間に読み上げが始まります。
             </div>
         </div>
 
-        <div class="card">
-            <h2>🎙 読上げと翻訳のカスタマイズ</h2>
-            <p>設定画面から、自分好みの聴取環境を整えることができます。</p>
-            <ul>
-                <li><b>再生モード:</b> 「英語のみ」「日本語のみ」「英語の後に日本語（翻訳）」など、スロットごとに自由に設定できます。</li>
-                <li><b>読上げ速度:</b> 0.5倍から2.0倍まで調整可能です。</li>
-                <li><b>高精度翻訳:</b> <a href="deepl-guide.html">DeepL設定ガイド</a> を参照してAPIキーを設定すると、より自然な翻訳で楽しめます。</li>
-            </ul>
-        </div>
+        <!-- 7. Settings -->
+        <div class="card" id="settings">
+            <h2>⚙️ 設定画面</h2>
+            <div class="screenshot-row">
+                <figure class="screenshot-wrap">
+                    <img src="image/設定1.png" alt="設定1" class="screenshot">
+                    <figcaption>再生・翻訳設定</figcaption>
+                </figure>
+                <figure class="screenshot-wrap">
+                    <img src="image/設定2.png" alt="設定2" class="screenshot">
+                    <figcaption>音声の詳細設定</figcaption>
+                </figure>
+                <figure class="screenshot-wrap">
+                    <img src="image/設定3.png" alt="設定3" class="screenshot">
+                    <figcaption>ヘルプ・法律情報</figcaption>
+                </figure>
+            </div>
 
-        <div class="important">
-            <strong>注意点:</strong> Webサイトの構造によっては、正しく本文を抽出できない場合があります。その際は「元HP」タブに切り替えて、通常のブラウザとして閲覧してください。
+            <h3>再生設定</h3>
+            <table>
+                <tr><th>項目</th><th>説明</th></tr>
+                <tr><td>記事選択時に自動で再生</td><td>記事をタップした瞬間に読み上げを開始します。OFFにすると再生ボタンを押すまで待機します。</td></tr>
+                <tr><td>記事終了時に次の記事へ自動進行</td><td>最後の段落まで読み終えると、次の記事へ自動的に進みます。</td></tr>
+            </table>
+
+            <h3>翻訳設定</h3>
+            <table>
+                <tr><th>エンジン</th><th>説明</th></tr>
+                <tr><td>Google（無料）</td><td>Google 翻訳を使用します。APIキー不要。</td></tr>
+                <tr><td>DeepL</td><td>より自然な翻訳が可能。APIキーの設定が必要です。<a href="deepl-guide.html">設定ガイド →</a></td></tr>
+            </table>
+
+            <h3>読み上げ音声の詳細設定</h3>
+            <p>英語・日本語それぞれ「音声1」「音声2」の 2 種類の音声を登録できます。ドロップダウンで音声を選び、▶ ボタンで試聴してから設定してください。ここで選んだ音声が、各スロットの「音声1/音声2」指定に反映されます。</p>
+
+            <h3>ヘルプとガイド</h3>
+            <p>設定画面の下部から、このユーザーガイドやサポートページへアクセスできます。各タブの右上の <b>?（ヘルプ）ボタン</b> からも同様にアクセスできます。</p>
         </div>
 
     </div>
