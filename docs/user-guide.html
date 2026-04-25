@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <style>
         :root {
             --primary: #1565C0;
@@ -212,8 +213,18 @@
         }
 
         .tab-item .tab-icon {
-            font-size: 1.6em;
             margin-bottom: 6px;
+        }
+
+        .tab-item .tab-icon .material-icons {
+            font-size: 2em;
+            color: var(--primary);
+        }
+
+        h2 .material-icons {
+            font-size: 1.3em;
+            color: var(--primary);
+            vertical-align: middle;
         }
 
         .tab-item .tab-name {
@@ -274,7 +285,7 @@
 <body>
     <div class="navbar">
         <div class="container" style="margin:0 auto; padding:0 20px;">
-            <a href="index.html">← ホームへ戻る</a>
+            <a href="index.html">← TOPへ</a>
         </div>
     </div>
 
@@ -298,31 +309,31 @@
 
         <!-- 1. Overview -->
         <div class="card" id="overview">
-            <h2>🗂 画面構成の概要</h2>
+            <h2><span class="material-icons">grid_view</span> 画面構成の概要</h2>
             <p>アプリは下部のタブバーで 5 つの画面を切り替えます。</p>
             <div class="tab-grid">
                 <div class="tab-item">
-                    <div class="tab-icon">🏠</div>
+                    <div class="tab-icon"><span class="material-icons">home</span></div>
                     <div class="tab-name">ホーム</div>
                     <div class="tab-desc">ニュースソース（RSSフィード）の管理</div>
                 </div>
                 <div class="tab-item">
-                    <div class="tab-icon">📋</div>
+                    <div class="tab-icon"><span class="material-icons">list</span></div>
                     <div class="tab-name">記事一覧</div>
                     <div class="tab-desc">登録ソースの最新記事リスト</div>
                 </div>
                 <div class="tab-item">
-                    <div class="tab-icon">📖</div>
+                    <div class="tab-icon"><span class="material-icons">article</span></div>
                     <div class="tab-name">読み上げ</div>
                     <div class="tab-desc">英日対訳テキストと再生コントロール</div>
                 </div>
                 <div class="tab-item">
-                    <div class="tab-icon">🌐</div>
+                    <div class="tab-icon"><span class="material-icons">public</span></div>
                     <div class="tab-name">HP</div>
                     <div class="tab-desc">記事の元ウェブページを表示</div>
                 </div>
                 <div class="tab-item">
-                    <div class="tab-icon">⚙️</div>
+                    <div class="tab-icon"><span class="material-icons">settings</span></div>
                     <div class="tab-name">設定</div>
                     <div class="tab-desc">再生・翻訳・音声の詳細設定</div>
                 </div>
@@ -331,10 +342,10 @@
 
         <!-- 2. Home -->
         <div class="card" id="home">
-            <h2>🏠 ホーム画面 — ニュースソースの管理</h2>
+            <h2><span class="material-icons">home</span> ホーム画面 — ニュースソースの管理</h2>
             <div class="screenshot-row">
                 <figure class="screenshot-wrap">
-                    <img src="image/ホーム.png" alt="ホーム画面" class="screenshot">
+                    <img src="image/01_ホーム.png" alt="ホーム画面" class="screenshot">
                     <figcaption>ホーム画面</figcaption>
                 </figure>
             </div>
@@ -362,17 +373,16 @@
 
         <!-- 3. Articles -->
         <div class="card" id="articles">
-            <h2>📋 記事一覧</h2>
+            <h2><span class="material-icons">list</span> 記事一覧</h2>
             <div class="screenshot-row">
                 <figure class="screenshot-wrap">
-                    <img src="image/記事一覧.png" alt="記事一覧" class="screenshot">
+                    <img src="image/02_記事一覧.png" alt="記事一覧" class="screenshot">
                     <figcaption>記事一覧</figcaption>
                 </figure>
             </div>
             <p>ホームで選択したソースの最新記事が一覧表示されます。</p>
             <ul>
                 <li><b>記事をタップ</b> → 読み上げ画面へ移動して本文の取得・読み上げを開始します。</li>
-                <li>上部の <b>ソース名ボタン</b> をタップすると、別のソースに切り替えられます。</li>
             </ul>
             <div class="tip">
                 <strong>ヒント:</strong> 設定で「記事選択時に自動で再生」をONにしておくと、タップした瞬間に読み上げが始まります。
@@ -381,14 +391,14 @@
 
         <!-- 4. Reader -->
         <div class="card" id="reader">
-            <h2>📖 読み上げ画面</h2>
+            <h2><span class="material-icons">article</span> 読み上げ画面</h2>
             <div class="screenshot-row">
                 <figure class="screenshot-wrap">
-                    <img src="image/読み上げ.png" alt="読み上げ画面" class="screenshot screenshot-lg">
+                    <img src="image/03_読み上げ.png" alt="読み上げ画面" class="screenshot screenshot-lg">
                     <figcaption>読み上げ画面</figcaption>
                 </figure>
                 <figure class="screenshot-wrap">
-                    <img src="image/ミニプレーヤー.png" alt="スロット設定" class="screenshot screenshot-lg">
+                    <img src="image/03_ミニプレーヤー.png" alt="スロット設定" class="screenshot screenshot-lg">
                     <figcaption>読み上げスロット設定</figcaption>
                 </figure>
             </div>
@@ -437,10 +447,10 @@
 
         <!-- 5. HP -->
         <div class="card" id="hp">
-            <h2>🌐 HP（元のウェブページ）</h2>
+            <h2><span class="material-icons">public</span> HP（元のウェブページ）</h2>
             <div class="screenshot-row">
                 <figure class="screenshot-wrap">
-                    <img src="image/HP.png" alt="HP画面" class="screenshot screenshot-lg">
+                    <img src="image/04_HP.png" alt="HP画面" class="screenshot screenshot-lg">
                     <figcaption>HP（元ページ）</figcaption>
                 </figure>
             </div>
@@ -456,19 +466,19 @@
 
         <!-- 6. Share -->
         <div class="card" id="share">
-            <h2>🔗 ブラウザから URL を共有する</h2>
+            <h2><span class="material-icons">share</span> ブラウザから URL を共有する</h2>
             <p>Chrome などのブラウザで記事を見つけたら、WebVoice に共有して読み上げさせることができます。</p>
             <div class="screenshot-row">
                 <figure class="screenshot-wrap">
-                    <img src="image/web共有1.png" alt="Chromeの共有メニュー" class="screenshot">
+                    <img src="image/06_chrome.png" alt="Chromeの共有メニュー" class="screenshot">
                     <figcaption>① Chrome のメニューを開く</figcaption>
                 </figure>
                 <figure class="screenshot-wrap">
-                    <img src="image/web共有3.png" alt="WebVoice を選択" class="screenshot">
+                    <img src="image/06_共有.png" alt="WebVoice を選択" class="screenshot">
                     <figcaption>② 共有先を選択</figcaption>
                 </figure>
                 <figure class="screenshot-wrap">
-                    <img src="image/web共有2.png" alt="読み上げ開始" class="screenshot">
+                    <img src="image/06_読み上げ.png" alt="読み上げ開始" class="screenshot">
                     <figcaption>③ 自動で読み上げ開始</figcaption>
                 </figure>
             </div>
@@ -493,19 +503,15 @@
 
         <!-- 7. Settings -->
         <div class="card" id="settings">
-            <h2>⚙️ 設定画面</h2>
+            <h2><span class="material-icons">settings</span> 設定画面</h2>
             <div class="screenshot-row">
                 <figure class="screenshot-wrap">
-                    <img src="image/設定1.png" alt="設定1" class="screenshot">
+                    <img src="image/05_設定1.png" alt="設定1" class="screenshot">
                     <figcaption>再生・翻訳設定</figcaption>
                 </figure>
                 <figure class="screenshot-wrap">
-                    <img src="image/設定2.png" alt="設定2" class="screenshot">
+                    <img src="image/05_設定2.png" alt="設定2" class="screenshot">
                     <figcaption>音声の詳細設定</figcaption>
-                </figure>
-                <figure class="screenshot-wrap">
-                    <img src="image/設定3.png" alt="設定3" class="screenshot">
-                    <figcaption>ヘルプ・法律情報</figcaption>
                 </figure>
             </div>
 
